@@ -17,11 +17,7 @@ Get the upcoming assignments that you have not submitted - For University of Col
   ```
   pip --version
   ```
-- Install pip (skip if you have pip installed)
-
-  ```
-  follow: [https://pip.pypa.io/en/stable/installing/](https://pip.pypa.io/en/stable/installing/)
-  ```
+- Install pip (skip if you have pip installed) follow: <https://pip.pypa.io/en/stable/installing/>
 
 - Install the dependencies
   ```
@@ -32,3 +28,8 @@ Get the upcoming assignments that you have not submitted - For University of Col
   ```
   python3 main.py
   ```
+- Run the script (Windows)
+  ```
+  py main.py
+  ```
+  *You can create a shortcut of main.py and double click on it to run the script. Make shure that you have selected open with Python in shortcut properties.
