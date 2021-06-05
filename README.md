@@ -20,8 +20,7 @@ Get the upcoming assignments that you have not submitted - For University of Col
 - Install pip (skip if you have pip installed)
 
   ```
-  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  sudo python3 get-pip.py
+  follow: [https://pip.pypa.io/en/stable/installing/](https://pip.pypa.io/en/stable/installing/)
   ```
 
 - Install the dependencies
