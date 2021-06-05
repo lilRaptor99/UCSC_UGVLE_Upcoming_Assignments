@@ -32,4 +32,4 @@ Get the upcoming assignments that you have not submitted - For University of Col
   ```
   py main.py
   ```
-  *You can create a shortcut of main.py and double click on it to run the script. Make shure that you have selected open with Python in shortcut properties.
+  *You can create a shortcut of main.py and double click on it to run the script. Make sure that you have selected open with Python in shortcut properties.
