@@ -4,14 +4,10 @@ Get the upcoming assignments that you have not submitted - For University of Col
 
 ## How to Run
 
-- Create a folder
-  ```
-  mkdir UCSC_UGVLE_Upcoming_Assignments
-  cd UCSC_UGVLE_Upcoming_Assignments
-  ```
 - Clone your forked repository
   ```
   git clone https://github.com/USERNAME/UCSC_UGVLE_Upcoming_Assignments
+  cd UCSC_UGVLE_Upcoming_Assignments
   ```
 - Verify that you have pip installed
   ```
@@ -32,4 +28,4 @@ Get the upcoming assignments that you have not submitted - For University of Col
   ```
   py main.py
   ```
-  *You can create a shortcut of main.py and double click on it to run the script. Make sure that you have selected open with Python in shortcut properties.
+  \*You can create a shortcut of main.py and double click on it to run the script. Make sure that you have selected open with Python in shortcut properties.
