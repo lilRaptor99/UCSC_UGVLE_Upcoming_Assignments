@@ -1,33 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 import os
+import platform
 import login
 
 
-username = login.get_username()
-password = login.get_password()
-
-session = requests.Session()
-
-payload = {"anchor": "",
-           "logintoken": "",
-           "username": username,
-           "password": password
-           }
-
-login_page = session.get("https://ugvle.ucsc.cmb.ac.lk/login/index.php").text
-soup_login_page = BeautifulSoup(login_page, 'lxml')
-
-login_form = soup_login_page.find('form', class_='mt-3')
-
-login_token = login_form.find_all('input')[1]['value']
-
-payload["logintoken"] = login_token
-# print(payload)
-
-login = session.post(
-    "https://ugvle.ucsc.cmb.ac.lk/login/index.php", data=payload)
-
+session = login.vle_login()
 
 upcoming_events = session.get(
     "https://ugvle.ucsc.cmb.ac.lk/calendar/view.php?view=upcoming").text
@@ -69,4 +47,7 @@ if(i == 0):
 
 print("\n------------------------------------------------------------")
 
-os.system("pause")
+if(platform.system() == 'Windows'):
+    os.system("pause")
+else:
+    input("Press return/enter to exit: ")

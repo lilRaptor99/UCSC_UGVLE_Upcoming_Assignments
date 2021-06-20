@@ -1,3 +1,5 @@
+from bs4 import BeautifulSoup
+import requests
 import json
 
 
@@ -63,3 +65,49 @@ def get_password():
         print("An error occurred - login.get_password")
         print(e)
         exit(0)
+
+
+def vle_login():
+    session = requests.Session()
+
+    username = get_username()
+    password = get_password()
+
+    payload = {"anchor": "",
+               "logintoken": "",
+               "username": username,
+               "password": password
+               }
+
+    try:
+        login_page = session.get(
+            "https://ugvle.ucsc.cmb.ac.lk/login/index.php").text
+    except Exception as e:
+        print("Error connecting to VLE!")
+        exit(0)
+
+    soup_login_page = BeautifulSoup(login_page, 'lxml')
+
+    login_form = soup_login_page.find('form', class_='mt-3')
+
+    login_token = login_form.find_all('input')[1]['value']
+
+    payload["logintoken"] = login_token
+    # print(payload)
+
+    login = session.post(
+        "https://ugvle.ucsc.cmb.ac.lk/login/index.php", data=payload).text
+
+    soup_login = BeautifulSoup(login, 'lxml')
+
+    # invalid login details
+    if(soup_login.find('div', class_='alert alert-danger')):
+        print("Error logging in!\n\t- Invalid username or password")
+        exit(0)
+
+    return session
+
+
+if __name__ == "__main__":
+    print("Running login tests...")
+    vle_login()
