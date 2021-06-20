@@ -45,8 +45,13 @@ for event in events:
     soup_event_page = BeautifulSoup(event_page, 'lxml')
     event_details = soup_event_page.find_all('td', class_='cell c1 lastcol')
     module_name = soup_event_page.find('h1').text
-    due_date = event_details[1].text;
-    remaining_time = event_details[2].text;
+
+    due_date = "N/A"
+    remaining_time = "N/A"
+    if(len(event_details) > 2):
+        due_date = event_details[1].text
+        remaining_time = event_details[2].text
+
     submitted = soup_event_page.find_all(
         'td', class_='submissionstatussubmitted cell c1 lastcol')
     if not submitted:
