@@ -108,6 +108,6 @@ def vle_login():
     return session
 
 
-if __name__ == "__main__":
-    print("Running login tests...")
+if(__name__ == "__main__"):
+    print("Testing login...")
     vle_login()

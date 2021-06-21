@@ -2,10 +2,15 @@ from bs4 import BeautifulSoup
 import requests
 import os
 import platform
+
 import login
+import attendance
 
 
 session = login.vle_login()
+
+attendance.mark_attendance(session)
+
 
 upcoming_events = session.get(
     "https://ugvle.ucsc.cmb.ac.lk/calendar/view.php?view=upcoming").text
