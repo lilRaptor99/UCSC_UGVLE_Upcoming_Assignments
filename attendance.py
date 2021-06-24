@@ -9,7 +9,7 @@ import login
 
 finished_loading = False
 
-# Print loading text on console without blocking the main thread
+# Print loading text on console without blocking the main threads
 
 
 def print_loading():
@@ -48,8 +48,24 @@ def mark_attendance(session):
             course_list.add(course_link)
 
     finished_loading = True
-    time.sleep(0.1)
-    print(course_list)
+    time.sleep(0.2)
+    # print(course_list)
+
+    print("\rVisiting courses: ")
+    finished_loading = False
+    t = threading.Thread(target=print_loading)
+    t.start()
+
+    for course in course_list:
+        course_page = session.get(course).text
+        soup_course_page = BeautifulSoup(course_page, 'lxml')
+        course_title = soup_course_page.find(
+            'div', class_="page-header-headings").find('h1').text
+
+        print("\r" + course_title)
+
+    finished_loading = True
+    time.sleep(0.2)
 
 
 if(__name__ == "__main__"):
