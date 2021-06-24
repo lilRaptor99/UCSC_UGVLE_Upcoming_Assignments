@@ -1,6 +1,6 @@
 # UCSC_UGVLE_Upcoming_Assignments
 
-Get the upcoming assignments that you have not submitted - For University of Colombo School of Computing Undergraduates
+Get the upcoming assignments that you have not submitted and mark your attendance - For University of Colombo School of Computing Undergraduates
 
 ## How to Run
 
