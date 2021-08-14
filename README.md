@@ -2,7 +2,9 @@
 
 Get the upcoming assignments that you have not submitted and mark your attendance - For University of Colombo School of Computing Undergraduates
 
-## How to Run
+#### Download windows(x64): [click here](https://github.com/lilRaptor99/UCSC_UGVLE_Upcoming_Assignments/releases/download/v0.1.0/Upcoming-Assignments-v0.1.0.exe) (12.7 MB)
+
+## How to compile and run
 
 - Clone your forked repository
   ```
